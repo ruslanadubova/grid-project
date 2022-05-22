@@ -1,0 +1,8 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header-content {
+    &__container {
+        @extend %container;
+    }
+}
