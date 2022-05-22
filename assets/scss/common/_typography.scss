@@ -1,0 +1,17 @@
+@use "../presets/" as *;
+@use "mixins" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-main;
+    font-size: $font-size;
+    color: $color-gray;
+}
+
+a {
+    text-decoration: none;
+    color: $color-light;
+}
