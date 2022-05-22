@@ -1,7 +1,9 @@
 @use "../presets/" as *;
-@use "mixins" as *;
+@use "../mixins" as *;
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -9,6 +11,13 @@ html {
     font-family: $font-main;
     font-size: $font-size;
     color: $color-gray;
+}
+
+h1 {
+    font-size: 3.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    font-family: $font-header;
 }
 
 a {
