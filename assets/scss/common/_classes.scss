@@ -10,7 +10,49 @@
     border: 2px solid $color-light;
     padding: 0.5em 1em;
     background-color: rgba($color-light, 0.1);
-    
+
     font-size: 1.125rem;
     letter-spacing: 0.1em;
+
+    transition: background-color 0.5s;
+
+    &:hover,
+    &:focus {
+        background-color: $color-accent;
+    }
+}
+
+.btn--light {
+    @include lg-min {
+        min-width: 250px;
+        height: 60px;
+    }
+
+    @include lg-md {
+        min-width: 200px;
+        height: 50px;
+    }
+
+    @include md {
+        min-width: 170px;
+        height: 40px;
+    }
+
+    background-color: rgba($color-light, 0.1);
+    border: 2px solid $color-light;
+}
+
+.btn--primary {
+    height: 60px;
+
+    @include sm-min {
+        min-width: 350px;
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    background-color: rgba($color-primary, 0.8);
+    border: 2px solid $color-primary;
 }
