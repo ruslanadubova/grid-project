@@ -509,7 +509,6 @@ a {
   z-index: 1;
 }
 .header-content__title {
-  margin: 0 0 53px;
   text-align: center;
 }
 .header-content__actions {
@@ -521,13 +520,8 @@ a {
           justify-content: center;
   gap: 20px;
 }
-
-.skills {
-  padding: 10px;
-}
 .skills__container {
   display: grid;
-  gap: 10px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
   grid-auto-rows: calc(33.33vh - 13.3333333333px);
@@ -653,31 +647,61 @@ a {
   .btn--primary {
     min-width: 350px;
   }
+  .skills {
+    padding: 10px;
+  }
+  .skills__container {
+    gap: 10px;
+  }
 }
 
 @media (min-width: 992px) {
+  h1 {
+    font-size: 3.75rem;
+  }
   .btn--light {
     min-width: 250px;
     height: 60px;
   }
+  .header-content__title {
+    margin: 0 0 53px;
+  }
 }
 
 @media (max-width: 991.8px) and (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
   .btn--light {
     min-width: 200px;
     height: 50px;
   }
+  .header-content__title {
+    margin: 0 0 43px;
+  }
 }
 
 @media (max-width: 767.8px) {
+  h1 {
+    font-size: 1.875rem;
+  }
   .btn--light {
     min-width: 170px;
     height: 40px;
+  }
+  .header-content__title {
+    margin: 0 0 33px;
   }
 }
 
 @media (max-width: 575.8px) {
   .btn--primary {
     width: 100%;
+  }
+  .skills {
+    padding: 20px;
+  }
+  .skills__container {
+    gap: 20px;
   }
 }
