@@ -11,7 +11,6 @@
     padding: 0.5em 1em;
     background-color: rgba($color-light, 0.1);
 
-    font-size: 1.125rem;
     letter-spacing: 0.1em;
 
     transition: background-color 0.5s;
@@ -26,6 +25,7 @@
     @include lg-min {
         min-width: 250px;
         height: 60px;
+        font-size: 1.125rem;
     }
 
     @include lg-md {
@@ -44,6 +44,7 @@
 
 .btn--primary {
     height: 60px;
+    font-size: 1.125rem;
 
     @include sm-min {
         min-width: 350px;
