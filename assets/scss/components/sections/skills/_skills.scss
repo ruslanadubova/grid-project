@@ -6,6 +6,7 @@ $local-gap: calc(40px / 3);
   @include sm-min {
     padding: $gap-sm;
   }
+
   @include sm {
     padding: $gap;
   }
@@ -17,21 +18,26 @@ $local-gap: calc(40px / 3);
       grid-template-areas: "a1 a1 a2 a3""a4 a5 a5 a6""a7 a8 a9 a6";
       grid-template-columns: repeat(4, 1fr);
     }
+
     @include lg-md {
-      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+      grid-template-areas: "a1 a1 a2""a3 a4 a4""a5 a5 a6""a7 a8 a6""a7 a9 a9";
       grid-template-columns: repeat(3, 1fr);
     }
+
     @include md-sm {
-      grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+      grid-template-areas: "a1 a2""a3 a2""a4 a4""a5 a6""a5 a7""a8 a9";
       grid-template-columns: repeat(2, 1fr);
     }
+
     @include sm {
-      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+      grid-template-areas: "a1""a2""a3""a4""a5""a6""a7""a8""a9";
       grid-template-columns: 1fr;
     }
+
     @include sm-min {
       gap: $gap-sm;
     }
+
     @include sm {
       gap: $gap;
     }
@@ -39,6 +45,7 @@ $local-gap: calc(40px / 3);
     @media (min-height: 691px) {
       grid-auto-rows: calc(33.33vh - #{$local-gap});
     }
+
     @media (max-height: 690px) {
       grid-auto-rows: calc(230px - #{$local-gap});
     }

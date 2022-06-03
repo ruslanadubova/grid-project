@@ -2,17 +2,17 @@
 @use "../../mixins" as *;
 
 .posts {
-    
+
     @include lg-min {
         padding-top: $gap-x5;
         padding-bottom: $gap-x5;
     }
-  
+
     @include lg-md {
         padding-top: $gap-x4;
         padding-bottom: $gap-x4;
     }
-  
+
     @include md {
         padding-top: $gap-x3;
         padding-bottom: $gap-x3;
@@ -29,17 +29,17 @@
             margin-bottom: 3rem;
             font-size: 2.5rem;
         }
-        
+
         @include lg-md {
             margin-bottom: 2.625rem;
             font-size: 2rem;
         }
-        
+
         @include md-sm {
             margin-bottom: 2.25rem;
             font-size: 1.5rem;
         }
-        
+
         @include sm {
             margin-bottom: 2.25rem;
             text-align: center;
@@ -80,7 +80,7 @@
     &-item {
         background-color: lighten($color-gray-light, 5%);
         transition: background-color 0.5s;
-       
+
         &__link {
             height: 100%;
             overflow: hidden;
@@ -89,36 +89,38 @@
         }
 
         &__image {
-            transition: transform 0.5s;
             display: flex;
             overflow: hidden;
             align-content: center;
             justify-content: center;
             background-color: $color-primary;
 
-            img {
+            & img {
                 width: 100%;
                 border-style: none;
+                object-fit: cover;
+                transition: transform 0.5s;
             }
         }
 
         &__caption {
+
             display: grid;
             align-content: center;
             padding: $gap;
 
-            h3 {
+            & h3 {
                 text-align: center;
                 font-family: $font-header;
                 transition: color 0.5s;
                 font-size: 1.125rem;
-                letter-spacing: 0,05em;
+                letter-spacing: 0.05em;
                 line-height: 20px;
                 color: $color-gray;
                 font-weight: 700;
             }
 
-            p {
+            & p {
                 @extend %paragraph;
                 transition: color 0.5s;
                 text-align: center;
@@ -127,11 +129,9 @@
         }
 
         &:hover {
-            .posts-item {
-                background-color: darken($color-gray-light, 5%);
-            }
+            background-color: darken($color-gray-light, 5%);
 
-            .posts-item__image {
+            img {
                 transform: scale(1.1);
             }
 
@@ -144,14 +144,11 @@
             }
         }
     }
+
     &__actions {
         display: flex;
         justify-content: center;
-        margin-top: $gap;
-        @include sm-min {
-          margin-bottom: $gap-lg;
-        }
-      }
+    }
 }
 
 .posts-item:nth-of-type(1) {
