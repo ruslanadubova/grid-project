@@ -1,0 +1,183 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.posts {
+    
+    @include lg-min {
+        padding-top: $gap-x5;
+        padding-bottom: $gap-x5;
+    }
+  
+    @include lg-md {
+        padding-top: $gap-x4;
+        padding-bottom: $gap-x4;
+    }
+  
+    @include md {
+        padding-top: $gap-x3;
+        padding-bottom: $gap-x3;
+    }
+
+    &__title {
+        margin-top: 0;
+        letter-spacing: 0.1em;
+        color: $color-primary;
+        font-family: $font-header;
+        line-height: 1.2em;
+
+        @include lg-min {
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        @include lg-md {
+            margin-bottom: 2.625rem;
+            font-size: 2rem;
+        }
+        
+        @include md-sm {
+            margin-bottom: 2.25rem;
+            font-size: 1.5rem;
+        }
+        
+        @include sm {
+            margin-bottom: 2.25rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__container {
+        @extend %container;
+    }
+
+    &__grid {
+        padding-bottom: $gap;
+        gap: $gap;
+        display: grid;
+
+        @include lg-min {
+            grid-template-areas: "p1 p1 p2 p3""p4 p5 p6 p6";
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include lg-md {
+            grid-template-areas: "p1 p1 p2""p3 p4 p4""p5 p5 p6";
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include md-sm {
+            grid-template-areas: "p1 p2""p3 p4""p5 p6";
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include sm {
+            grid-template-areas: "p1""p2""p3""p4""p5""p6";
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-item {
+        background-color: lighten($color-gray-light, 5%);
+        transition: background-color 0.5s;
+       
+        &__link {
+            height: 100%;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 300px 1fr;
+        }
+
+        &__image {
+            transition: transform 0.5s;
+            display: flex;
+            overflow: hidden;
+            align-content: center;
+            justify-content: center;
+            background-color: $color-primary;
+
+            img {
+                width: 100%;
+                border-style: none;
+            }
+        }
+
+        &__caption {
+            display: grid;
+            align-content: center;
+            padding: $gap;
+
+            h3 {
+                text-align: center;
+                font-family: $font-header;
+                transition: color 0.5s;
+                font-size: 1.125rem;
+                letter-spacing: 0,05em;
+                line-height: 20px;
+                color: $color-gray;
+                font-weight: 700;
+            }
+
+            p {
+                @extend %paragraph;
+                transition: color 0.5s;
+                text-align: center;
+                color: $color-gray;
+            }
+        }
+
+        &:hover {
+            .posts-item {
+                background-color: darken($color-gray-light, 5%);
+            }
+
+            .posts-item__image {
+                transform: scale(1.1);
+            }
+
+            h3 {
+                color: $color-primary;
+            }
+
+            p {
+                color: $color-primary;
+            }
+        }
+    }
+    &__actions {
+        display: flex;
+        justify-content: center;
+        margin-top: $gap;
+        @include sm-min {
+          margin-bottom: $gap-lg;
+        }
+      }
+}
+
+.posts-item:nth-of-type(1) {
+    grid-area: p1;
+}
+
+.posts-item:nth-of-type(1) {
+    grid-area: p1;
+}
+
+.posts-item:nth-of-type(2) {
+    grid-area: p2;
+}
+
+.posts-item:nth-of-type(3) {
+    grid-area: p3;
+}
+
+.posts-item:nth-of-type(4) {
+    grid-area: p4;
+}
+
+.posts-item:nth-of-type(5) {
+    grid-area: p5;
+}
+
+.posts-item:nth-of-type(6) {
+    grid-area: p6;
+}
